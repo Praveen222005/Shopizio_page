@@ -1,0 +1,798 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Background Animations */
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+  
+  .animate-float-reverse {
+    animation: float-reverse 8s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  .animate-particle-float {
+    animation: particle-float 10s linear infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  /* Welcome Screen Animations */
+  .animate-welcome-logo-glow {
+    animation: welcome-logo-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-welcome-orbit {
+    animation: welcome-orbit 3s linear infinite;
+  }
+  
+  .animate-welcome-orbit-reverse {
+    animation: welcome-orbit-reverse 4s linear infinite;
+  }
+  
+  .animate-welcome-text-glow {
+    animation: welcome-text-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-welcome-text-shimmer {
+    animation: welcome-text-shimmer 3s ease-in-out infinite;
+  }
+  
+  .animate-welcome-text-fade {
+    animation: welcome-text-fade 2s ease-in-out infinite;
+  }
+  
+  .animate-welcome-bounce-1 {
+    animation: welcome-bounce 1.5s ease-in-out infinite;
+  }
+  
+  .animate-welcome-bounce-2 {
+    animation: welcome-bounce 1.5s ease-in-out infinite 0.2s;
+  }
+  
+  .animate-welcome-bounce-3 {
+    animation: welcome-bounce 1.5s ease-in-out infinite 0.4s;
+  }
+  
+  /* Icon Animations */
+  .animate-icon-glow {
+    animation: icon-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-orbit {
+    animation: orbit 4s linear infinite;
+  }
+  
+  .animate-orbit-reverse {
+    animation: orbit-reverse 3s linear infinite;
+  }
+  
+  /* Text Animations */
+  .animate-text-shimmer {
+    animation: text-shimmer 2s ease-in-out infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out 0.3s both;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out 0.6s both;
+  }
+  
+  /* Form Animations */
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out 0.4s both;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out 0.6s both;
+  }
+  
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out 0.8s both;
+  }
+
+  /* Order Success Animations */
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  .animate-confetti {
+    animation: confetti linear infinite;
+  }
+  
+  /* Grid Pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+/* Order Button Styles */
+.order-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background: #1C212E;
+  position: relative;
+  height: 63px;
+  width: 100%;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 32px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.order-button span {
+  --o: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 19px;
+  line-height: 24px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: var(--o);
+  transition: opacity 0.3s ease;
+}
+
+.order-button span.default {
+  transition-delay: 0.3s;
+}
+
+.order-button span.success {
+  --offset: 16px;
+  --o: 0;
+}
+
+.order-button span.success svg {
+  width: 12px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: top;
+  fill: none;
+  margin: 7px 0 0 4px;
+  stroke: #16BF78;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: var(--offset);
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.order-button:active {
+  transform: scale(0.96);
+}
+
+.order-button .lines {
+  opacity: 0;
+  position: absolute;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  width: 6px;
+  top: 30px;
+  left: 100%;
+  box-shadow: 15px 0 0 white, 30px 0 0 white, 45px 0 0 white, 60px 0 0 white, 75px 0 0 white, 90px 0 0 white, 105px 0 0 white, 120px 0 0 white, 135px 0 0 white, 150px 0 0 white, 165px 0 0 white, 180px 0 0 white, 195px 0 0 white, 210px 0 0 white, 225px 0 0 white, 240px 0 0 white, 255px 0 0 white, 270px 0 0 white, 285px 0 0 white, 300px 0 0 white, 315px 0 0 white, 330px 0 0 white;
+}
+
+.order-button .back,
+.order-button .box {
+  --start: white;
+  --stop: #CDD9ED;
+  border-radius: 2px;
+  background: linear-gradient(var(--start), var(--stop));
+  position: absolute;
+}
+
+.order-button .truck {
+  width: 60px;
+  height: 41px;
+  left: 100%;
+  z-index: 1;
+  top: 11px;
+  position: absolute;
+  transform: translateX(24px);
+}
+
+.order-button .truck:before, .order-button .truck:after {
+  --r: -90deg;
+  content: "";
+  height: 2px;
+  width: 20px;
+  right: 58px;
+  position: absolute;
+  display: block;
+  background: white;
+  border-radius: 1px;
+  transform-origin: 100% 50%;
+  transform: rotate(var(--r));
+}
+
+.order-button .truck:before {
+  top: 4px;
+}
+
+.order-button .truck:after {
+  --r: 90deg;
+  bottom: 4px;
+}
+
+.order-button .truck .back {
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 41px;
+  z-index: 1;
+}
+
+.order-button .truck .front {
+  overflow: hidden;
+  position: absolute;
+  border-radius: 2px 9px 9px 2px;
+  width: 26px;
+  height: 41px;
+  left: 60px;
+}
+
+.order-button .truck .front:before, .order-button .truck .front:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.order-button .truck .front:before {
+  height: 13px;
+  width: 2px;
+  left: 0;
+  top: 14px;
+  background: linear-gradient(#6C7486, #3F4656);
+}
+
+.order-button .truck .front:after {
+  border-radius: 2px 9px 9px 2px;
+  background: #275EFE;
+  width: 24px;
+  height: 41px;
+  right: 0;
+}
+
+.order-button .truck .front .window {
+  overflow: hidden;
+  border-radius: 2px 8px 8px 2px;
+  background: #7699FF;
+  transform: perspective(4px) rotateY(3deg);
+  width: 22px;
+  height: 41px;
+  position: absolute;
+  left: 2px;
+  top: 0;
+  z-index: 1;
+  transform-origin: 0 50%;
+}
+
+.order-button .truck .front .window:before, .order-button .truck .front .window:after {
+  content: "";
+  position: absolute;
+  right: 0;
+}
+
+.order-button .truck .front .window:before {
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  background: #1C212E;
+}
+
+.order-button .truck .front .window:after {
+  width: 14px;
+  top: 7px;
+  height: 4px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.14);
+  transform: skewY(14deg);
+  box-shadow: 0 7px 0 rgba(255, 255, 255, 0.14);
+}
+
+.order-button .truck .light {
+  width: 3px;
+  height: 8px;
+  left: 83px;
+  transform-origin: 100% 50%;
+  position: absolute;
+  border-radius: 2px;
+  transform: scaleX(0.8);
+  background: #f0dc5f;
+}
+
+.order-button .truck .light:before {
+  content: "";
+  height: 4px;
+  width: 7px;
+  opacity: 0;
+  transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+  position: absolute;
+  transform-origin: 0 50%;
+  left: 3px;
+  top: 50%;
+  margin-top: -2px;
+  background: linear-gradient(90deg, #f0dc5f, rgba(240, 220, 95, 0.7), rgba(240, 220, 95, 0));
+}
+
+.order-button .truck .light.top {
+  top: 4px;
+}
+
+.order-button .truck .light.bottom {
+  bottom: 4px;
+}
+
+.order-button .box {
+  --start: #EDD9A9;
+  --stop: #DCB773;
+  width: 21px;
+  height: 21px;
+  right: 100%;
+  top: 21px;
+}
+
+.order-button .box:before, .order-button .box:after {
+  content: "";
+  top: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.order-button .box:before {
+  height: 3px;
+  margin-top: -1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.order-button .box:after {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.order-button.animate .default {
+  --o: 0;
+  transition-delay: 0s;
+}
+
+.order-button.animate .success {
+  --offset: 0;
+  --o: 1;
+  transition-delay: 7s;
+}
+
+.order-button.animate .success svg {
+  transition-delay: 7.3s;
+}
+
+.order-button.animate .truck {
+  animation: truck 10s ease forwards;
+}
+
+.order-button.animate .truck:before {
+  animation: door1 2.4s ease forwards 0.3s;
+}
+
+.order-button.animate .truck:after {
+  animation: door2 2.4s ease forwards 0.6s;
+}
+
+.order-button.animate .truck .light:before, .order-button.animate .truck .light:after {
+  animation: light 10s ease forwards;
+}
+
+.order-button.animate .box {
+  animation: box 10s ease forwards;
+}
+
+.order-button.animate .lines {
+  animation: lines 10s ease forwards;
+}
+
+/* Welcome Screen Animation Keyframes */
+@keyframes welcome-logo-glow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 0 60px rgba(236, 72, 153, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 80px rgba(236, 72, 153, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes welcome-orbit {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+@keyframes welcome-orbit-reverse {
+  0% {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(50px) rotate(360deg);
+  }
+}
+
+@keyframes welcome-text-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(168, 85, 247, 0.5);
+  }
+}
+
+@keyframes welcome-text-shimmer {
+  0%, 100% {
+    background-position: -200% center;
+  }
+  50% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes welcome-text-fade {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes welcome-bounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Background Animation Keyframes */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(10px) translateX(-10px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) translateX(-15px) rotate(180deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icon Animation Keyframes */
+@keyframes icon-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6), 0 0 40px rgba(236, 72, 153, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(35px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(35px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  0% {
+    transform: rotate(0deg) translateX(35px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(35px) rotate(360deg);
+  }
+}
+
+/* Text Animation Keyframes */
+@keyframes text-shimmer {
+  0%, 100% {
+    background-position: -200% center;
+  }
+  50% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Form Animation Keyframes */
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Order Success Animation Keyframes */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Order Button Animation Keyframes */
+@keyframes truck {
+  10%, 30% {
+    transform: translateX(-164px);
+  }
+  40% {
+    transform: translateX(-104px);
+  }
+  60% {
+    transform: translateX(-224px);
+  }
+  75%, 100% {
+    transform: translateX(24px);
+  }
+}
+
+@keyframes lines {
+  0%, 30% {
+    opacity: 0;
+    transform: scaleY(0.7) translateX(0);
+  }
+  35%, 65% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(0.7) translateX(-400px);
+  }
+}
+
+@keyframes light {
+  0%, 30% {
+    opacity: 0;
+    transform: perspective(2px) rotateY(-15deg) scaleX(0.88);
+  }
+  40%, 100% {
+    opacity: 1;
+    transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+  }
+}
+
+@keyframes door1 {
+  30%, 50% {
+    transform: rotate(32deg);
+  }
+}
+
+@keyframes door2 {
+  30%, 50% {
+    transform: rotate(-32deg);
+  }
+}
+
+@keyframes box {
+  8%, 10% {
+    transform: translateX(40px);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(112px);
+    opacity: 1;
+  }
+  26% {
+    transform: translateX(112px);
+    opacity: 0;
+  }
+  27%, 100% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Styles */
+.backdrop-blur-2xl {
+  backdrop-filter: blur(24px);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Professional focus states */
+input:focus {
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+
+/* Button hover effects */
+button:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #db2777);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Line clamp utility */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
